@@ -5,7 +5,7 @@
 ## Быстрый старт
 
 1. **Установка NetBox**  
-Установите NetBox на виртуальную машину, следуя [официальной документации](https://netbox.readthedocs.io/).
+Установите NetBox на виртуальную машину, либо следуя [оффициальной документации](https://netbox.readthedocs.io/), либо воспользовавшись [community docker-версией](https://github.com/netbox-community/netbox-docker?tab=readme-ov-file)
 
 2. **Создание API-ключа**  
 В интерфейсе NetBox создайте API-ключ с необходимыми правами доступа.
@@ -16,7 +16,7 @@
 git clone <rep>
 
 ```
-4.	Создание виртуального окружения
+4. **Создание виртуального окружения**
 Создайте и активируйте виртуальное окружение:
 
 ```python
@@ -24,31 +24,31 @@ python -m venv venv
 source venv/bin/activate
 ```
 
-5.	Установка зависимостей
+5. **Установка зависимостей**
 Установите необходимые библиотеки:
 
 ```python
 pip install -r requirements.txt
 ```
 
-6.	Настройка API-ключа и URL NetBox:
+6. **Настройка API-ключа и URL NetBox**
 
 В файле config.py укажите:
 •	URL вашей установки NetBox.
 •	Ваш API-ключ.
 
-7.	Редактирование inventory
+7. **Редактирование inventory**
 При необходимости измените файл `inventory/inventory.yml` в соответствии с вашими требованиями.
 
-8.	Запуск скрипта
+8. **Запуск скрипта**
 Запустите основной скрипт с указанием inventory:
 
 ```python
 python main.py inventory/inventory.yml
 ```
 
-9.	???
-10.	PROFIT!
+9.	**???**
+10.	**PROFIT!**
 
 
 Полезное:
