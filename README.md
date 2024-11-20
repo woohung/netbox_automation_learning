@@ -33,8 +33,9 @@ pip install -r requirements.txt
 6. **Настройка API-ключа и URL NetBox**
 
 В файле config.py укажите:
-•	URL вашей установки NetBox.
-•	Ваш API-ключ.
+
+- URL вашей установки NetBox;
+- Ваш API-ключ.
 
 7. **Редактирование inventory**
 При необходимости измените файл `inventory/inventory.yml` в соответствии с вашими требованиями.
