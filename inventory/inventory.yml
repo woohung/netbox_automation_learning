@@ -1,0 +1,31 @@
+site_name: "msk"
+manufacturer_name: "Cisco"
+devices:
+  - role: "access-switch"
+    model: "vIOS-a"
+    count: 2
+    name_suffix: "swa"
+    role_color: "1da670"
+    subnet: "192.168.10.0/24"
+    interfaces:
+      - interface_range: "Gi1/0/[1-24]"
+        interface_type: "1000base-t"
+      - interface_range: "vlan10"
+        interface_type: "virtual"
+        primary: True
+      - interface_range: "vlan20"
+        interface_type: "virtual"
+        primary: False
+  - role: "destributed-switch"
+    model: "vIOS-d"
+    count: 1
+    name_suffix: "swd"
+    role_color: '00ffff'
+    subnet: "192.168.10.0/24"
+    interfaces:
+      - interface_range: "Gi1/0/[1-24]"
+        interface_type: "1000base-t"
+      - interface_range: "vlan10"
+        interface_type: "virtual"
+        primary: True
+prefix: "192.168.10.0/24"
