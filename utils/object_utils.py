@@ -70,14 +70,23 @@ def create_or_get_device_type(manufacturer_id, model_name, interfaces=[]):
     # Создаем интерфейсы для каждого типа, определенного в списке interfaces
     if interfaces:
         for interface in interfaces:
-            interface_range = interface["interface_range"]
-            interface_type = interface["interface_type"]
-            create_interface_templates(device_type_id, interface_range, interface_type)
+            interface_range = interface.get("interface_range")
+            interface_type = interface.get("interface_type")
+            if not interface_range or not interface_type:
+                logger.warning(
+                    f"Invalid interface data: {interface}. "
+                    f"Both 'interface_range' and 'interface_type' are required."
+                )
+                continue
+            try:
+                create_interface_templates(device_type_id, interface_range, interface_type)
+            except ValueError as e:
+                logger.error(f"Failed to create interfaces for range '{interface_range}': {e}")
     else:
-        logger.info(f"The list {interfaces} might be empty.")
-        pass
-    return device_type_id
+        logger.info(f"No interfaces provided for device type '{model_name}'.")
 
+    return device_type_id
+ 
 
 def create_or_get_device_role(role_name, color=None):
     role_slug = _slugify(role_name)

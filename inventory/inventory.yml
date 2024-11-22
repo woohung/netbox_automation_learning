@@ -8,7 +8,7 @@ devices:
     role_color: "1da670"
     subnet: "192.168.10.0/24"
     interfaces:
-      - interface_range: "Gi1/0/[1-24]"
+      - interface_range: "Gi0/[0-3]"
         interface_type: "1000base-t"
       - interface_range: "vlan10"
         interface_type: "virtual"
@@ -23,7 +23,7 @@ devices:
     role_color: '00ffff'
     subnet: "192.168.10.0/24"
     interfaces:
-      - interface_range: "Gi1/0/[1-24]"
+      - interface_range: "Gi0/[0-3]"
         interface_type: "1000base-t"
       - interface_range: "vlan10"
         interface_type: "virtual"
